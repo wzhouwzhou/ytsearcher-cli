@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint no-console: 0 */
 'use strict';
 const util = require('util'), { YTSearcher } = require('ytsearcher');
 const w = process.stdout.columns, reg = /^Error code: (\d+)$/;
@@ -20,7 +21,7 @@ process.on('unhandledRejection', err => {
       console.log(`No results for [${query}]!`);
       process.exit(0);
     }
-  } catch(err) {
+  } catch (err) {
     const msg = `${err.message}`;
     if (!reg.test(msg)) throw err;
     const [, status] = msg.match(reg) || [];
@@ -29,9 +30,9 @@ process.on('unhandledRejection', err => {
         Please ensure that you have specified a valid token!
         Otherwise, please report this to the package maintainers: https://github.com/wzhouwzhou/ytsearcher-cli/issues\n${'='.repeat(w)}\n
       `);
-      process.exit(2);
+      return process.exit(2);
     }
   }
   console.log(util.inspect(new Map(results.currentPage.map((e, i) => [i, e])), false, null, true));
-  process.exit(0);
-})();
+  return process.exit(0);
+}());
