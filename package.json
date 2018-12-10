@@ -1,0 +1,38 @@
+{
+  "name": "ytsearcher-cli",
+  "version": "1.0.0",
+  "description": "Search results on youtube, fast and simple.",
+  "main": "./bin/ytsearcher-cli.js",
+  "bin": {
+    "ytsearcher-cli": "./bin/ytsearcher-cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wzhouwzhou/ytsearcher-cli/"
+  },
+  "keywords": [
+    "YouTube",
+    "Searcher",
+    "ytsearcher",
+    "Pagination",
+    "YTSearch",
+    "Promise",
+    "modern",
+    "es6",
+    "cli",
+    "command-line",
+    "Google",
+    "API"
+  ],
+  "author": "William Zhou",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/wzhouwzhou/ytsearcher-cli/issues"
+  },
+  "dependencies": {
+    "ytsearcher": "^1.2.1"
+  }
+}
